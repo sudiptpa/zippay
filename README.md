@@ -5,6 +5,7 @@
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP. This package implements ZipPay support for Omnipay.
 
+[![StyleCI](https://github.styleci.io/repos/180097262/shield?branch=master&style=flat)](https://github.styleci.io/repos/180097262)
 [![Latest Stable Version](https://poser.pugx.org/sudiptpa/zippay/v/stable)](https://packagist.org/packages/sudiptpa/zippay)
 [![Total Downloads](https://poser.pugx.org/sudiptpa/zippay/downloads)](https://packagist.org/packages/sudiptpa/zippay)
 [![License](https://poser.pugx.org/sudiptpa/zippay/license)](https://packagist.org/packages/sudiptpa/zippay)
