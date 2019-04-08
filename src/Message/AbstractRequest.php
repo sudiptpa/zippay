@@ -6,8 +6,7 @@ use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 use Omnipay\ZipPay\Helper\Uuid;
 
 /**
- * Abstract Request
- *
+ * Abstract Request.
  */
 abstract class AbstractRequest extends BaseAbstractRequest
 {
@@ -30,6 +29,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function setKey($value)
@@ -47,6 +47,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function setApiKey($value)
@@ -55,7 +56,8 @@ abstract class AbstractRequest extends BaseAbstractRequest
     }
 
     /**
-     * Get Idempotency Key
+     * Get Idempotency Key.
+     *
      * @return string Idempotency Key
      */
     public function getIdempotencyKey()
@@ -64,8 +66,9 @@ abstract class AbstractRequest extends BaseAbstractRequest
     }
 
     /**
-     * Set Idempotency Key
-     * @param  string $value Idempotency Key
+     * Set Idempotency Key.
+     *
+     * @param string $value Idempotency Key
      */
     public function setIdempotencyKey($value)
     {
@@ -74,6 +77,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function setSSLCertificatePath($value)
@@ -95,15 +99,16 @@ abstract class AbstractRequest extends BaseAbstractRequest
     public function getHeaders()
     {
         return [
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer ' . $this->getApiKey(),
-            'Zip-Version' => '2017-03-01',
+            'Content-Type'    => 'application/json',
+            'Authorization'   => 'Bearer '.$this->getApiKey(),
+            'Zip-Version'     => '2017-03-01',
             'Idempotency-Key' => $this->getIdempotencyKey(),
         ];
     }
 
     /**
      * @param $data
+     *
      * @return Response
      */
     public function sendData($data)
@@ -116,7 +121,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
         $body = null;
 
         if ($this->getHttpMethod() === 'GET') {
-            $apiEndPoint = $apiEndPoint . '?' . http_build_query($data, '', '&');
+            $apiEndPoint = $apiEndPoint.'?'.http_build_query($data, '', '&');
         } else {
             $body = json_encode($data);
         }
@@ -153,6 +158,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
      * @param $data
      * @param array $headers
      * @param $status
+     *
      * @return Response
      */
     protected function createResponse($data, $headers = [], $status = 404)

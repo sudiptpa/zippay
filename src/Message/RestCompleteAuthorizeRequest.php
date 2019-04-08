@@ -1,13 +1,12 @@
 <?php
-namespace Omnipay\ZipPay\Message;
 
-use Omnipay\ZipPay\Message\RestCompleteAuthorizeResponse;
+namespace Omnipay\ZipPay\Message;
 
 class RestCompleteAuthorizeRequest extends AbstractRequest
 {
     public function getEndpoint()
     {
-        return parent::getEndpoint() . '/charges';
+        return parent::getEndpoint().'/charges';
     }
 
     public function getHttpMethod()
@@ -81,7 +80,7 @@ class RestCompleteAuthorizeRequest extends AbstractRequest
     public function getAuthority()
     {
         return [
-            'type' => $this->getAuthorityType(),
+            'type'  => $this->getAuthorityType(),
             'value' => $this->getAuthorityValue(),
         ];
     }

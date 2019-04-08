@@ -110,9 +110,9 @@ class RestGatewayTest extends GatewayTestCase
     private function getOptionsForAuthorize()
     {
         return [
-            'amount' => $this->getAmount(),
-            'currency' => $this->getCurrency(),
-            'card' => $this->getValidCard(),
+            'amount'    => $this->getAmount(),
+            'currency'  => $this->getCurrency(),
+            'card'      => $this->getValidCard(),
             'returnUrl' => $this->getReturnUrl(),
         ];
     }
@@ -120,11 +120,11 @@ class RestGatewayTest extends GatewayTestCase
     private function getOptionsForCompleteAuthorize()
     {
         return [
-            'amount' => $this->getAmount(),
-            'authorityType' => 'checkout_id',
+            'amount'         => $this->getAmount(),
+            'authorityType'  => 'checkout_id',
             'authorityValue' => $this->getCheckoutId(),
-            'captureFunds' => false,
-            'currency' => $this->getCurrency(),
+            'captureFunds'   => false,
+            'currency'       => $this->getCurrency(),
         ];
     }
 
@@ -132,7 +132,7 @@ class RestGatewayTest extends GatewayTestCase
     {
         return [
             'chargeId' => $this->getChargeId(),
-            'amount' => $this->getAmount(),
+            'amount'   => $this->getAmount(),
         ];
     }
 
@@ -147,8 +147,8 @@ class RestGatewayTest extends GatewayTestCase
     {
         return [
             'chargeId' => $this->getChargeId(),
-            'amount' => $this->getAmount(),
-            'reason' => 'Unwanted item',
+            'amount'   => $this->getAmount(),
+            'reason'   => 'Unwanted item',
         ];
     }
 }
