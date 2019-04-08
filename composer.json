@@ -1,0 +1,45 @@
+{
+   "name":"sudiptpa/zippay",
+   "description":"ZipPay driver for the Omnipay payment processing library.",
+   "keywords":[
+      "omnipay",
+      "ZipPay",
+      "zip"
+   ],
+   "homepage":"https://github.com/sudiptpa/zippay",
+   "license":"MIT",
+   "authors":[
+      {
+         "name":"Sujip Thapa",
+         "email":"sudiptpa@gmail.com"
+      }
+   ],
+   "require":{
+      "omnipay/common":"~2.3"
+   },
+   "require-dev":{
+      "omnipay/tests":"~2.0",
+      "squizlabs/php_codesniffer":"~1.5"
+   },
+   "autoload":{
+      "psr-4":{
+         "Omnipay\\ZipPay\\":"src"
+      }
+   },
+   "autoload-dev":{
+      "psr-4":{
+         "Omnipay\\ZipPay\\Test\\":"tests"
+      }
+   },
+   "scripts":{
+      "test":"phpunit",
+      "check-style":"phpcs -p --standard=PSR2 src/",
+      "fix-style":"phpcbf -p --standard=PSR2 src/"
+   },
+   "extra":{
+      "branch-alias":{
+         "dev-master":"2.0.x-dev"
+      }
+   },
+   "prefer-stable":true
+}
