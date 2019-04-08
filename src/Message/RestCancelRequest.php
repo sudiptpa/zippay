@@ -1,11 +1,12 @@
 <?php
+
 namespace Omnipay\ZipPay\Message;
 
 class RestCancelRequest extends AbstractRequest
 {
     protected function getEndpoint()
     {
-        return parent::getEndpoint() . '/charges/' . $this->getChargeId() . '/cancel';
+        return parent::getEndpoint().'/charges/'.$this->getChargeId().'/cancel';
     }
 
     public function getHttpMethod()

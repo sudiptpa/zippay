@@ -10,7 +10,7 @@ use Omnipay\ZipPay\Message\RestCompleteAuthorizeRequest;
 use Omnipay\ZipPay\Message\RestRefundRequest;
 
 /**
- * ZipPay Gateway
+ * ZipPay Gateway.
  */
 class RestGateway extends AbstractGateway
 {
@@ -22,8 +22,8 @@ class RestGateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return [
-            'apiKey' => '',
-            'key' => '',
+            'apiKey'   => '',
+            'key'      => '',
             'testMode' => true,
         ];
     }
@@ -38,6 +38,7 @@ class RestGateway extends AbstractGateway
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function setApiKey($value)
@@ -55,6 +56,7 @@ class RestGateway extends AbstractGateway
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function setKey($value)
@@ -64,6 +66,7 @@ class RestGateway extends AbstractGateway
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function setSSLCertificatePath($value)
@@ -89,6 +92,7 @@ class RestGateway extends AbstractGateway
 
     /**
      * @param array $options
+     *
      * @return RestCompleteAuthorizeRequest
      */
     public function completeAuthorize(array $options = [])
@@ -98,6 +102,7 @@ class RestGateway extends AbstractGateway
 
     /**
      * @param array $options
+     *
      * @return RestCaptureRequest
      */
     public function capture(array $options = [])
@@ -107,6 +112,7 @@ class RestGateway extends AbstractGateway
 
     /**
      * @param array $options
+     *
      * @return RestCancelRequest
      */
     public function void(array $options = [])
@@ -116,6 +122,7 @@ class RestGateway extends AbstractGateway
 
     /**
      * @param array $options
+     *
      * @return RestRefundRequest
      */
     public function refund(array $options = [])

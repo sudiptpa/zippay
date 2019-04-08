@@ -6,7 +6,7 @@ use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
- * Response
+ * Response.
  */
 class Response extends AbstractResponse
 {
@@ -60,7 +60,7 @@ class Response extends AbstractResponse
     public function getErrorCode()
     {
         if ($this->isSuccessful()) {
-            return null;
+            return;
         }
 
         return $this->getDataField('error.code');
@@ -69,7 +69,7 @@ class Response extends AbstractResponse
     public function getErrorDetails()
     {
         if ($this->isSuccessful()) {
-            return null;
+            return;
         }
 
         return $this->getDataField('error.details');
@@ -87,7 +87,7 @@ class Response extends AbstractResponse
     protected function getHeader($field)
     {
         if (empty($this->headers[$field])) {
-            return null;
+            return;
         }
 
         return reset($this->headers[$field]);
@@ -107,8 +107,6 @@ class Response extends AbstractResponse
         if (isset($this->data[$field])) {
             return $this->data[$field];
         }
-
-        return null;
     }
 
     protected function getNestedDataField($field)
@@ -117,7 +115,7 @@ class Response extends AbstractResponse
         $data = $this->data;
         foreach ($levels as $level) {
             if (!isset($data[$level])) {
-                return null;
+                return;
             }
 
             $data = $data[$level];

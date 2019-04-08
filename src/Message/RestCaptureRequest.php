@@ -1,11 +1,12 @@
 <?php
+
 namespace Omnipay\ZipPay\Message;
 
 class RestCaptureRequest extends AbstractRequest
 {
     protected function getEndpoint()
     {
-        return parent::getEndpoint() . '/charges/' . $this->getChargeId() . '/capture';
+        return parent::getEndpoint().'/charges/'.$this->getChargeId().'/capture';
     }
 
     public function getHttpMethod()
