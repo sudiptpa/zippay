@@ -17,7 +17,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "sudiptpa/omnipay-zippay": "~2.0"
+        "sudiptpa/zippay": "~2.0"
     }
 }
 ```
@@ -29,8 +29,5 @@ And run composer to update your dependencies:
 
 ## Credits
 
-- [Daniel Condie](https://github.com/dcon138)
-- [All Contributors](../../contributors)
-
-This package was originally created by [Daniel Condie](https://github.com/dcon138), which orignally had support for Omnipay 3.x support only. So, in this package i've added the Omnipay 2.x support. I had my own requirements for my client so had to create a seperate package for Omnipay 2.x support.
+This package was originally created by [Daniel Condie](https://github.com/dcon138) as [Omnipay ZipPay](https://github.com/ignited/omnipay-zippay), which orignally had support for Omnipay 3.x support only. So, in this package i've added the Omnipay 2.x support. I had my own requirements for my client so had to create a seperate package for Omnipay 2.x support.
 
