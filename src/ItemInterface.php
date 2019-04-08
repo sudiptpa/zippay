@@ -1,4 +1,5 @@
 <?php
+
 namespace Omnipay\ZipPay;
 
 use Omnipay\Common\ItemInterface as BaseItemInterface;

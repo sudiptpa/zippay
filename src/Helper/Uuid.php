@@ -1,13 +1,14 @@
 <?php
+
 namespace Omnipay\ZipPay\Helper;
 
 abstract class Uuid
 {
-
     /**
-     * Create UUID v4 string
+     * Create UUID v4 string.
      *
      * Inspiration from GUI: the guid generator
+     *
      * @see http://guid.us/GUID/PHP
      *
      * @return string UUID v4 as string
@@ -20,25 +21,26 @@ abstract class Uuid
         }
 
         // generate UUID
-        mt_srand((double) microtime() * 10000); // optional for php 4.2.0 and up.
+        mt_srand((float) microtime() * 10000); // optional for php 4.2.0 and up.
         $charid = strtoupper(md5(uniqid(rand(), true)));
-        $uuid = join('-', array(
+        $uuid = implode('-', [
             substr($charid, 0, 8),
             substr($charid, 8, 4),
             substr($charid, 12, 4),
             substr($charid, 16, 4),
             substr($charid, 20, 12),
-        ));
+        ]);
 
         return $uuid;
     }
 
     /**
-     * Create a UUID v4 string enclosed by braces
+     * Create a UUID v4 string enclosed by braces.
+     *
      * @return string UUID v4 string with braces
      */
     public static function createEnclosed()
     {
-        return '{' . self::create() . '}';
+        return '{'.self::create().'}';
     }
 }

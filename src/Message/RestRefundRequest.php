@@ -1,11 +1,12 @@
 <?php
+
 namespace Omnipay\ZipPay\Message;
 
 class RestRefundRequest extends AbstractRequest
 {
     protected function getEndpoint()
     {
-        return parent::getEndpoint() . '/refunds';
+        return parent::getEndpoint().'/refunds';
     }
 
     public function getHttpMethod()

@@ -2,12 +2,9 @@
 
 namespace Omnipay\ZipPay\Message;
 
-use Omnipay\ZipPay\Message\Response;
-
 /**
- * RestAuthorizeResponse
+ * RestAuthorizeResponse.
  */
 class RestCaptureResponse extends Response
 {
-
 }

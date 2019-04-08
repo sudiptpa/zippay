@@ -3,10 +3,9 @@
 namespace Omnipay\ZipPay\Message;
 
 use Omnipay\Common\Message\RedirectResponseInterface;
-use Omnipay\ZipPay\Message\Response;
 
 /**
- * RestAuthorizeResponse
+ * RestAuthorizeResponse.
  */
 class RestAuthorizeResponse extends Response implements RedirectResponseInterface
 {
