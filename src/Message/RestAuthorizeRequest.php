@@ -296,6 +296,46 @@ class RestAuthorizeRequest extends AbstractRequest
     }
 
     /**
+     * @return string
+     */
+    public function getShippingAddressLine1()
+    {
+        return $this->getCard()->getShippingAddress1();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressCity()
+    {
+        return $this->getCard()->getShippingCity();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressState()
+    {
+        return $this->getCard()->getShippingState();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressPostalCode()
+    {
+        return $this->getCard()->getShippingPostcode();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressCountry()
+    {
+        return $this->getCard()->getShippingCountry();
+    }
+
+    /**
      * @param $data
      * @param array $headers
      * @param $status
