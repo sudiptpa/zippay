@@ -146,6 +146,17 @@ class RestAuthorizeRequest extends AbstractRequest
         ];
     }
 
+    public function getShippingAddress()
+    {
+        return [
+            'line1'       => $this->getShippingAddressLine1(),
+            'city'        => $this->getShippingAddressCity(),
+            'state'       => $this->getShippingAddressState(),
+            'postal_code' => $this->getShippingAddressPostalCode(),
+            'country'     => $this->getShippingAddressCountry(),
+        ];
+    }
+
     /**
      * @return array
      */
@@ -197,11 +208,20 @@ class RestAuthorizeRequest extends AbstractRequest
         ];
     }
 
+    /**
+     * @return array
+     */
     public function getOrderShippingDetails()
     {
-        return [
+        $data = [
             'pickup' => true,
         ];
+
+        if ($shipping = $this->getShippingAddress()) {
+            $data['address'] = $shipping;
+        }
+
+        return $data;
     }
 
     public function getConfig()
@@ -273,6 +293,46 @@ class RestAuthorizeRequest extends AbstractRequest
     public function getBillingAddressLastName()
     {
         return $this->getCard()->getBillingLastName();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressLine1()
+    {
+        return $this->getCard()->getShippingAddress1();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressCity()
+    {
+        return $this->getCard()->getShippingCity();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressState()
+    {
+        return $this->getCard()->getShippingState();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressPostalCode()
+    {
+        return $this->getCard()->getShippingPostcode();
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingAddressCountry()
+    {
+        return $this->getCard()->getShippingCountry();
     }
 
     /**

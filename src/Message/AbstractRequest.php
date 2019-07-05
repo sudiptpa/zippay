@@ -4,6 +4,7 @@ namespace Omnipay\ZipPay\Message;
 
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 use Omnipay\ZipPay\Helper\Uuid;
+use Omnipay\ZipPay\ItemBag;
 
 /**
  * Abstract Request.
@@ -91,6 +92,22 @@ abstract class AbstractRequest extends BaseAbstractRequest
     public function getSSLCertificatePath()
     {
         return $this->getParameter('sslCertificatePath');
+    }
+
+    /**
+     * Set the items in this order.
+     *
+     * @param ItemBag|array $items An array of items in this order
+     *
+     * @return AbstractRequest
+     */
+    public function setItems($items)
+    {
+        if ($items && !$items instanceof ItemBag) {
+            $items = new ItemBag($items);
+        }
+
+        return $this->setParameter('items', $items);
     }
 
     /**
