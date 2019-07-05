@@ -95,9 +95,10 @@ abstract class AbstractRequest extends BaseAbstractRequest
     }
 
     /**
-     * Set the items in this order
+     * Set the items in this order.
      *
      * @param ItemBag|array $items An array of items in this order
+     *
      * @return AbstractRequest
      */
     public function setItems($items)
@@ -108,15 +109,16 @@ abstract class AbstractRequest extends BaseAbstractRequest
 
         return $this->setParameter('items', $items);
     }
+
     /**
      * @return array
      */
     public function getHeaders()
     {
         return [
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer ' . $this->getApiKey(),
-            'Zip-Version' => '2017-03-01',
+            'Content-Type'    => 'application/json',
+            'Authorization'   => 'Bearer '.$this->getApiKey(),
+            'Zip-Version'     => '2017-03-01',
             'Idempotency-Key' => $this->getIdempotencyKey(),
         ];
     }
@@ -136,7 +138,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
         $body = null;
 
         if ($this->getHttpMethod() === 'GET') {
-            $apiEndPoint = $apiEndPoint . '?' . http_build_query($data, '', '&');
+            $apiEndPoint = $apiEndPoint.'?'.http_build_query($data, '', '&');
         } else {
             $body = json_encode($data);
         }
