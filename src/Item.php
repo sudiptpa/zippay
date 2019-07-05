@@ -161,14 +161,14 @@ class Item implements ItemInterface
      */
     public function getImageUri()
     {
-        return $this->getParameter('image_uri');
+        return $this->getParameter('imageUri');
     }
 
     /**
-     * Set the item image_uri.
+     * Set the item imageUri.
      */
     public function setImageUri($value)
     {
-        return $this->setParameter('image_uri', $value);
+        return $this->setParameter('imageUri', $value);
     }
 }
