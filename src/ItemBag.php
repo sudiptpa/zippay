@@ -3,7 +3,7 @@
 namespace Omnipay\ZipPay;
 
 /**
- * Cart Item Bag
+ * Cart Item Bag.
  *
  * This class defines a bag (multi element set or array) of single cart items
  * in the Omnipay system.
@@ -13,7 +13,7 @@ namespace Omnipay\ZipPay;
 class ItemBag implements \IteratorAggregate, \Countable
 {
     /**
-     * Item storage
+     * Item storage.
      *
      * @see Item
      *
@@ -22,7 +22,7 @@ class ItemBag implements \IteratorAggregate, \Countable
     protected $items;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param array $items An array of items
      */
@@ -32,7 +32,7 @@ class ItemBag implements \IteratorAggregate, \Countable
     }
 
     /**
-     * Return all the items
+     * Return all the items.
      *
      * @see Item
      *
@@ -44,7 +44,7 @@ class ItemBag implements \IteratorAggregate, \Countable
     }
 
     /**
-     * Replace the contents of this bag with the specified items
+     * Replace the contents of this bag with the specified items.
      *
      * @see Item
      *
@@ -60,7 +60,7 @@ class ItemBag implements \IteratorAggregate, \Countable
     }
 
     /**
-     * Add an item to the bag
+     * Add an item to the bag.
      *
      * @see Item
      *
@@ -76,7 +76,7 @@ class ItemBag implements \IteratorAggregate, \Countable
     }
 
     /**
-     * Returns an iterator for items
+     * Returns an iterator for items.
      *
      * @return \ArrayIterator An \ArrayIterator instance
      */
@@ -86,7 +86,7 @@ class ItemBag implements \IteratorAggregate, \Countable
     }
 
     /**
-     * Returns the number of items
+     * Returns the number of items.
      *
      * @return int The number of items
      */

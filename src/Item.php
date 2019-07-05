@@ -5,7 +5,7 @@ namespace Omnipay\ZipPay;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**
- * Cart Item
+ * Cart Item.
  *
  * This class defines a single cart item in the Omnipay system.
  *
@@ -19,7 +19,7 @@ class Item implements ItemInterface
     protected $parameters;
 
     /**
-     * Create a new item with the specified parameters
+     * Create a new item with the specified parameters.
      *
      * @param array|null $parameters An array of parameters to set on the new object
      */
@@ -29,14 +29,15 @@ class Item implements ItemInterface
     }
 
     /**
-     * Initialize this item with the specified parameters
+     * Initialize this item with the specified parameters.
      *
      * @param array|null $parameters An array of parameters to set on this object
+     *
      * @return $this Item
      */
     public function initialize($parameters = null)
     {
-        $this->parameters = new ParameterBag;
+        $this->parameters = new ParameterBag();
 
         Helper::initialize($this, $parameters);
 
@@ -53,6 +54,7 @@ class Item implements ItemInterface
 
     /**
      * @param $key
+     *
      * @return mixed
      */
     protected function getParameter($key)
@@ -63,6 +65,7 @@ class Item implements ItemInterface
     /**
      * @param $key
      * @param $value
+     *
      * @return $this Item
      */
     protected function setParameter($key, $value)
@@ -73,7 +76,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getName()
     {
@@ -81,7 +84,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * Set the item name
+     * Set the item name.
      */
     public function setName($value)
     {
@@ -89,7 +92,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDescription()
     {
@@ -97,7 +100,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * Set the item description
+     * Set the item description.
      */
     public function setDescription($value)
     {
@@ -105,7 +108,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getQuantity()
     {
@@ -113,7 +116,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * Set the item quantity
+     * Set the item quantity.
      */
     public function setQuantity($value)
     {
@@ -121,7 +124,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPrice()
     {
@@ -129,7 +132,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * Set the item price
+     * Set the item price.
      */
     public function setPrice($value)
     {
@@ -137,7 +140,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getReference()
     {
@@ -145,7 +148,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * Set the item reference
+     * Set the item reference.
      */
     public function setReference($value)
     {
@@ -153,7 +156,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getImageUri()
     {
@@ -161,7 +164,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * Set the item image_uri
+     * Set the item image_uri.
      */
     public function setImageUri($value)
     {
