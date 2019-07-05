@@ -2,6 +2,7 @@
 
 namespace Omnipay\ZipPay;
 
+use Omnipay\Common\Helper;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**
