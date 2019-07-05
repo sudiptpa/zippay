@@ -13,7 +13,7 @@ class RestAuthorizeRequest extends AbstractRequest
 {
     public function getEndpoint()
     {
-        return parent::getEndpoint().'/checkouts';
+        return parent::getEndpoint() . '/checkouts';
     }
 
     public function getHttpMethod()
@@ -136,13 +136,24 @@ class RestAuthorizeRequest extends AbstractRequest
     public function getBillingAddress()
     {
         return [
-            'line1'       => $this->getBillingAddressLine1(),
-            'city'        => $this->getBillingAddressCity(),
-            'state'       => $this->getBillingAddressState(),
+            'line1' => $this->getBillingAddressLine1(),
+            'city' => $this->getBillingAddressCity(),
+            'state' => $this->getBillingAddressState(),
             'postal_code' => $this->getBillingAddressPostalCode(),
-            'country'     => $this->getBillingAddressCountry(),
-            'first_name'  => $this->getBillingAddressFirstName(),
-            'last_name'   => $this->getBillingAddressLastName(),
+            'country' => $this->getBillingAddressCountry(),
+            'first_name' => $this->getBillingAddressFirstName(),
+            'last_name' => $this->getBillingAddressLastName(),
+        ];
+    }
+
+    public function getShippingAddress()
+    {
+        return [
+            'line1' => $this->getShippingAddressLine1(),
+            'city' => $this->getShippingAddressCity(),
+            'state' => $this->getShippingAddressState(),
+            'postal_code' => $this->getShippingAddressPostalCode(),
+            'country' => $this->getShippingAddressCountry(),
         ];
     }
 
@@ -153,9 +164,9 @@ class RestAuthorizeRequest extends AbstractRequest
     {
         $data = [
             'reference' => $this->getReference(),
-            'amount'    => $this->getAmount(),
-            'currency'  => $this->getCurrency(),
-            'shipping'  => $this->getOrderShippingDetails(),
+            'amount' => $this->getAmount(),
+            'currency' => $this->getCurrency(),
+            'shipping' => $this->getOrderShippingDetails(),
         ];
 
         if ($this->getOrderItems()) {
@@ -188,20 +199,29 @@ class RestAuthorizeRequest extends AbstractRequest
     protected function convertItemToItemData(ItemInterface $item)
     {
         return [
-            'name'      => $item->getName(),
-            'amount'    => $item->getQuantity() * $this->formatCurrency($item->getPrice()),
-            'quantity'  => $item->getQuantity(),
-            'type'      => 'sku',
+            'name' => $item->getName(),
+            'amount' => $item->getQuantity() * $this->formatCurrency($item->getPrice()),
+            'quantity' => $item->getQuantity(),
+            'type' => 'sku',
             'reference' => $item->getReference(),
             'image_uri' => $item->getImageUri(),
         ];
     }
 
+    /**
+     * @return array
+     */
     public function getOrderShippingDetails()
     {
-        return [
+        $data = [
             'pickup' => true,
         ];
+
+        if ($shipping = $this->getShippingAddress()) {
+            $data['address'] = $shipping;
+        }
+
+        return $data;
     }
 
     public function getConfig()
