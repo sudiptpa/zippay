@@ -32,3 +32,10 @@ And run composer to update your dependencies:
 
 This package was originally created by [Daniel Condie](https://github.com/dcon138) as [Omnipay ZipPay](https://github.com/ignited/omnipay-zippay), which orignally had support for Omnipay 3.x support only. So, in this package i've added the Omnipay 2.x support. I had my own requirements for my client so had to create a seperate package for Omnipay 2.x support.
 
+## Contributing
+
+Contributions are **welcome** and will be fully **credited**.
+
+Contributions can be made via a Pull Request on [Github](https://github.com/sudiptpa/zippay).
+
+
