@@ -169,7 +169,7 @@ class RestAuthorizeRequest extends AbstractRequest
             'shipping'  => $this->getOrderShippingDetails(),
         ];
 
-        if ($items =$this->getOrderItems()) {
+        if ($items = $this->getOrderItems()) {
             $data['items'] = $items;
         }
 
