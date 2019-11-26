@@ -169,8 +169,8 @@ class RestAuthorizeRequest extends AbstractRequest
             'shipping'  => $this->getOrderShippingDetails(),
         ];
 
-        if ($this->getOrderItems()) {
-            $data['items'] = $this->getOrderItems();
+        if ($items =$this->getOrderItems()) {
+            $data['items'] = $items;
         }
 
         return $data;
@@ -202,7 +202,7 @@ class RestAuthorizeRequest extends AbstractRequest
             'name'      => $item->getName(),
             'amount'    => $item->getQuantity() * $this->formatCurrency($item->getPrice()),
             'quantity'  => $item->getQuantity(),
-            'type'      => 'sku',
+            'type'      => $item->getType() ?: 'sku',
             'reference' => $item->getReference(),
             'image_uri' => $item->getImageUri(),
         ];
