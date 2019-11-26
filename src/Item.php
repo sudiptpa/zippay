@@ -159,6 +159,22 @@ class Item implements ItemInterface
     /**
      * {@inheritdoc}
      */
+    public function getType()
+    {
+        return $this->getParameter('type');
+    }
+
+    /**
+     * Set the item imageUri.
+     */
+    public function setType($value)
+    {
+        return $this->setParameter('type', $value);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getImageUri()
     {
         return $this->getParameter('imageUri');
