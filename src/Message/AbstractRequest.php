@@ -172,9 +172,9 @@ abstract class AbstractRequest extends BaseAbstractRequest
     }
 
     /**
-     * @param $data
+     * @param       $data
      * @param array $headers
-     * @param $status
+     * @param       $status
      *
      * @return Response
      */

@@ -336,9 +336,9 @@ class RestAuthorizeRequest extends AbstractRequest
     }
 
     /**
-     * @param $data
+     * @param       $data
      * @param array $headers
-     * @param $status
+     * @param       $status
      *
      * @return RestAuthorizeResponse
      */
