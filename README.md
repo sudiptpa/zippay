@@ -10,6 +10,12 @@ processing library for PHP. This package implements ZipPay support for Omnipay.
 [![Total Downloads](https://poser.pugx.org/sudiptpa/zippay/downloads)](https://packagist.org/packages/sudiptpa/zippay)
 [![License](https://poser.pugx.org/sudiptpa/zippay/license)](https://packagist.org/packages/sudiptpa/zippay)
 
+---
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/sudiptpa)
+
+If this package has been useful to you, GitHub Sponsors is a simple way to support ongoing maintenance, improvements, and future releases.
+
 ## Installation
 
 Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it
